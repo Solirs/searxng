@@ -301,6 +301,7 @@ def get_result_template(theme_name: str, template_name: str):
 def get_favicon_or_logo(imgtype: str, request):
 	# This method returns a favicon or regular image depending on the imgtype parameter
 	# It is used to not repeat code for /favicon.ico and /logo
+	# Called by favicon() and logo()
 	theme = request.preferences.get_value("theme")
 	path = os.path.expanduser(settings.get("brand").get(imgtype))
 	relpath = os.path.join(app.root_path, path)
